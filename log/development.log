@@ -1,0 +1,106 @@
+Started GET "/" for 127.0.0.1 at 2024-04-29 00:28:47 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aventadorsv/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aventadorsv/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.8.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 633)
+Completed 200 OK in 14ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 7375)
+
+
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBlogPosts (20240429044820)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "blog_posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240429044820"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-04-29 04:50:44.743150"], ["updated_at", "2024-04-29 04:50:44.743150"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBlogPost Load (0.2ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogPost Create (1.5ms)[0m  [1m[32mINSERT INTO "blog_posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hello world"], ["body", "This is the first blog"], ["created_at", "2024-04-29 05:05:57.547819"], ["updated_at", "2024-04-29 05:05:57.547819"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogPost Load (1.0ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts" WHERE "blog_posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogPost Update (1.3ms)[0m  [1m[33mUPDATE "blog_posts" SET "title" = ?, "updated_at" = ? WHERE "blog_posts"."id" = ?[0m  [["title", "new"], ["updated_at", "2024-04-29 05:11:33.437491"], ["id", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogPost Destroy (1.6ms)[0m  [1m[31mDELETE FROM "blog_posts" WHERE "blog_posts"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2024-04-29 01:21:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 293)
+  Rendered layout layouts/application.html.erb (Duration: 315.3ms | Allocations: 80807)
+Completed 200 OK in 321ms (Views: 316.9ms | ActiveRecord: 0.0ms | Allocations: 84742)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogPost Create (1.1ms)[0m  [1m[32mINSERT INTO "blog_posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "111"], ["body", "hi"], ["created_at", "2024-04-29 05:24:19.516867"], ["updated_at", "2024-04-29 05:24:19.516867"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlogPost Create (0.8ms)[0m  [1m[32mINSERT INTO "blog_posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "222"], ["body", "hi hi"], ["created_at", "2024-04-29 05:25:48.092553"], ["updated_at", "2024-04-29 05:25:48.092553"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2024-04-29 01:31:55 -0400
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2142)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2232)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3806)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>My Blog</h1>
+
+<% @blog_posts.each do |blog_post| %>
+    <div>
+        <h2><%= blog_post.title %></h2>
+        <%= blog_post.body %
+    </div>
+<% end %>
+):
+1:    <h1>My Blog</h1>
+2:    
+3:    <% @blog_posts.each do |blog_post| %>
+4:        <div>
+5:            <h2><%= blog_post.title %></h2>
+6:            <%= blog_post.body %
+7:        </div>
+8:    <% end %>
+  
+app/views/blog_posts/index.html.erb:7: syntax error, unexpected '<'
+app/views/blog_posts/index.html.erb:10: unterminated regexp meets end of file
+app/views/blog_posts/index.html.erb:7: syntax error, unexpected '<'
+app/views/blog_posts/index.html.erb:10: unterminated regexp meets end of file
+app/views/blog_posts/index.html.erb:7: syntax error, unexpected '<'
+app/views/blog_posts/index.html.erb:10: unterminated regexp meets end of file
+app/views/blog_posts/index.html.erb:7: syntax error, unexpected '<'
+app/views/blog_posts/index.html.erb:10: unterminated regexp meets end of file
+Started GET "/" for 127.0.0.1 at 2024-04-29 01:32:08 -0400
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.5ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 5264)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 19920)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 1.6ms | Allocations: 20759)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-29 01:42:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.2ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 5341)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 38115)
+Completed 200 OK in 32ms (Views: 26.1ms | ActiveRecord: 0.4ms | Allocations: 42829)
+
+
