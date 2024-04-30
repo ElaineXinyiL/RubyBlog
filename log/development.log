@@ -1851,3 +1851,143 @@ Processing by BlogPostsController#index as TURBO_STREAM
 Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 3555)
 
 
+Started GET "/" for 127.0.0.1 at 2024-04-30 16:54:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.2ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 5207)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 155.0ms | Allocations: 139180)
+Completed 200 OK in 162ms (Views: 155.9ms | ActiveRecord: 0.6ms | Allocations: 143692)
+
+
+Started GET "/blog_posts/new" for 127.0.0.1 at 2024-04-30 16:54:28 -0400
+Processing by BlogPostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/new.html.erb within layouts/application
+  Rendered blog_posts/_form.html.erb (Duration: 6.7ms | Allocations: 1933)
+  Rendered blog_posts/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2187)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 7926)
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 0.2ms | Allocations: 10390)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-30 16:58:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.2ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 5208)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 49.1ms | Allocations: 67154)
+Completed 200 OK in 58ms (Views: 50.5ms | ActiveRecord: 0.6ms | Allocations: 71665)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2024-04-30 16:58:04 -0400
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.2ms | Allocations: 3097)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-30 16:58:04 -0400
+Processing by BlogPostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.1ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 732)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 6614)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.1ms | Allocations: 6943)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-04-30 16:58:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 568)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3272)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 8880)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 10158)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-04-30 16:58:17 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elaineliuxinyi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "elaineliuxinyi@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 290ms (ActiveRecord: 0.3ms | Allocations: 3706)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-30 16:58:17 -0400
+Processing by BlogPostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.1ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 729)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 7402)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 7686)
+
+
+Started GET "/blog_posts/new" for 127.0.0.1 at 2024-04-30 16:59:01 -0400
+Processing by BlogPostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/new.html.erb within layouts/application
+  Rendered blog_posts/_form.html.erb (Duration: 24.5ms | Allocations: 4637)
+  Rendered blog_posts/new.html.erb within layouts/application (Duration: 25.4ms | Allocations: 4872)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 12216)
+Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 0.1ms | Allocations: 14453)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2024-04-30 16:59:02 -0400
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 6ms (ActiveRecord: 0.2ms | Allocations: 1812)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-30 16:59:02 -0400
+Processing by BlogPostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.1ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 882)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 6618)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 7000)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-30 16:59:02 -0400
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.4ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts"[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 727)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 6446)
+Completed 200 OK in 53ms (Views: 44.3ms | ActiveRecord: 0.4ms | Allocations: 6723)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-04-30 16:59:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 499)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2024)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 7698)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 8692)
+
+
