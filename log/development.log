@@ -2478,3 +2478,69 @@ Processing by BlogPostsController#index as TURBO_STREAM
 Completed 200 OK in 13ms (Views: 7.0ms | ActiveRecord: 3.1ms | Allocations: 6964)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-01 22:12:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogPostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (3.0ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts" WHERE (published_at <= '2024-05-02 02:12:12.588436') ORDER BY "blog_posts"."published_at" DESC NULLS LAST, "blog_posts"."updated_at" DESC[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 5270)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 52722)
+Completed 200 OK in 92ms (Views: 56.0ms | ActiveRecord: 24.4ms | Allocations: 58890)
+
+
+Started GET "/blog_posts/2" for 127.0.0.1 at 2024-05-01 22:12:14 -0400
+Processing by BlogPostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogPost Load (0.6ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts" WHERE (published_at <= '2024-05-02 02:12:14.534470') AND "blog_posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blog_posts_controller.rb:53:in `set_blog_post'
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/show.html.erb within layouts/application
+  Rendered blog_posts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5653)
+Completed 200 OK in 18ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 8307)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-05-01 22:12:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 563)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3430)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 9030)
+Completed 200 OK in 41ms (Views: 19.7ms | ActiveRecord: 10.5ms | Allocations: 14206)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-05-01 22:12:26 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 217)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 134)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1415)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 7098)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 8101)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-05-01 22:12:27 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elaineliuxinyi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "elaineliuxinyi@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 309ms (ActiveRecord: 1.9ms | Allocations: 4162)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-01 22:12:27 -0400
+Processing by BlogPostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blog_posts_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering blog_posts/index.html.erb within layouts/application
+  [1m[36mBlogPost Load (0.2ms)[0m  [1m[34mSELECT "blog_posts".* FROM "blog_posts" ORDER BY "blog_posts"."published_at" DESC NULLS LAST, "blog_posts"."updated_at" DESC[0m
+  ↳ app/views/blog_posts/index.html.erb:3
+  Rendered blog_posts/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 789)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 6555)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 7901)
+
+
